@@ -1,7 +1,6 @@
 import zlib
 import base64
-
-
+import re
 # Деархиватор
 
 # file = open("/home/rincewind/Рабочий стол/Science shit/700.tab","r")
@@ -15,12 +14,11 @@ import base64
 #     e.close()
 #     i+=1
 # file.close()
-
 # Фильтр
 def wordfix_1(s):
     if (s == '') or (s == " "):
         return None
-    zp = ['!', '?', '/', '/', '\\', ',', '.', '<', '>', '{', '}', '[', ']', '*', '^', ';', ':', '-']
+    zp = ['!', '?', '/', '/', '\\', ',', '.', '<', '>', '{', '}', '[', ']', '*', '^', ';', ':', '-','\r','\n\r','']
     i = 0
     while i < len(s):
         if s[i] in zp:
@@ -57,7 +55,6 @@ def wordfix_1(s):
             mc += 1
     return ' '.join(nm)
 
-#Фильтратор
 # for i in range(0,9999):
 #     s = ''
 #     f = open("/home/rincewind/Рабочий стол/Science shit/DIO/"+str(i)+".txt", 'r')
