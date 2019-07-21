@@ -55,13 +55,13 @@ def wordfix_1(s):
             mc += 1
     return ' '.join(nm)
 
-# for i in range(0,9999):
-#     s = ''
-#     f = open("/home/rincewind/Рабочий стол/Science shit/DIO/"+str(i)+".txt", 'r')
-#     for line in f:
-#         s = s + line
-#     f = open("/home/rincewind/Рабочий стол/Science shit/DIO/"+str(i)+".txt", 'w')
-#     if wordfix_1(s)!=None:
-#         f.write(wordfix_1(s))
-#     f.close()
-#     print("Файл № ",i," готов.")
+for i in range(0,10000):
+    s = ''
+    f = open("/home/rincewind/Рабочий стол/Science shit/DIO/"+str(i)+".txt", 'r')
+    for line in f:
+        s = s + line
+    f = open("/home/rincewind/Рабочий стол/Science shit/DIO/"+str(i)+".txt", 'w')
+    if wordfix_1(s)!=None:
+        f.write(wordfix_1(s))
+    f.close()
+    print("Файл № ",i," готов.")
